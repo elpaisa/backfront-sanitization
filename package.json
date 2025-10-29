@@ -76,7 +76,7 @@
     "type": "git"
   },
   "repository": {
-    "url": "https://github.com/elpaisa/backfront-sanitization"
+    "url": "git+https://github.com/elpaisa/backfront-sanitization.git"
   },
   "scripts": {
     "build:clean": "rm -rf dist",
