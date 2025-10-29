@@ -92,5 +92,5 @@
     "test": "jest --coverage"
   },
   "types": "dist/types/index.d.ts",
-  "version": "0.1.16"
+  "version": "0.1.17"
 }
