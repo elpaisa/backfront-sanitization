@@ -1,0 +1,33 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com/
+          scope: '@elpaisa'
+      - name: Git configuration
+        run: |
+          git config --global user.email "graphicsinsite@hotmail.com"
+          git config --global user.name "elpaisa"
+      - name: Version Patch
+        run: npm version patch
+      - name: Install
+        run: yarn install
+      - name: Build Artifact
+        run: yarn build
+      - name: Publish
+        run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_TOKEN}}

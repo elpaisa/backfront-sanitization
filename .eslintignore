@@ -1,0 +1,13 @@
+tsconfig.json
+node_modules
+*.svg
+*.json
+node_modules/**
+**/local-dev/**
+**/*.config.js
+tsconfig.eslint.json
+rollup.config.js
+types
+dist
+coverage
+.eslintrc.js
