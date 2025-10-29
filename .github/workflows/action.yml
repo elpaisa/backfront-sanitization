@@ -21,8 +21,6 @@ jobs:
         run: |
           git config --global user.email "graphicsinsite@hotmail.com"
           git config --global user.name "elpaisa"
-      - name: Version Patch
-        run: npm version patch
       - name: Install
         run: yarn install
       - name: Build Artifact
